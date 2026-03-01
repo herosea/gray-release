@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Filter, Download, MoreHorizontal } from 'lucide-react';
 import './CustomerQuery.css';
 
@@ -12,18 +12,18 @@ interface Customer {
     totalSpent: string;
 }
 
-const DUMMY_CUSTOMERS: Customer[] = [
-    { id: 'CUS-001', name: '张三', email: 'zhangsan@example.com', phone: '13800138000', status: 'active', registeredAt: '2023-10-15', totalSpent: '¥12,500' },
-    { id: 'CUS-002', name: '李四', email: 'lisi@test.com', phone: '13900139000', status: 'active', registeredAt: '2023-11-02', totalSpent: '¥8,300' },
-    { id: 'CUS-003', name: '王五', email: 'wangwu@company.com', phone: '13700137000', status: 'inactive', registeredAt: '2024-01-20', totalSpent: '¥0' },
-    { id: 'CUS-004', name: '赵六', email: 'zhaoliu@domain.cn', phone: '13600136000', status: 'active', registeredAt: '2024-02-14', totalSpent: '¥3,200' },
-    { id: 'CUS-005', name: '钱七', email: 'qianqi@mail.com', phone: '13500135000', status: 'active', registeredAt: '2024-02-28', totalSpent: '¥1,150' },
-];
-
 export default function CustomerQuery() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [customers, setCustomers] = useState<Customer[]>([]);
 
-    const filteredCustomers = DUMMY_CUSTOMERS.filter(c =>
+    useEffect(() => {
+        fetch('http://localhost:8080/api/customers')
+            .then(res => res.json())
+            .then(data => setCustomers(data))
+            .catch(err => console.error('Failed to fetch customers', err));
+    }, []);
+
+    const filteredCustomers = customers.filter(c =>
         c.name.includes(searchTerm) || c.phone.includes(searchTerm) || c.id.includes(searchTerm)
     );
 
