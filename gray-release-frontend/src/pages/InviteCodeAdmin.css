@@ -1,0 +1,103 @@
+.invite-page .error-banner {
+  margin: 0.75rem 1.5rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.875rem;
+}
+
+.alert-tag,
+.ok-tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.alert-tag {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ok-tag {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.btn-mini {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.45rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btn-mini.danger {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.modal-card {
+  width: min(520px, calc(100vw - 2rem));
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.modal-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.invite-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.invite-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+}
+
+.inline-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inline-row .input {
+  flex: 1;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}

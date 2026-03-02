@@ -1,6 +1,5 @@
-import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutDashboard, Users, Settings, Bell, Search, Menu } from 'lucide-react';
+import { LayoutDashboard, Users, Settings, Bell, Search, Menu, Ticket } from 'lucide-react';
 import './AdminLayout.css';
 
 export default function AdminLayout() {
@@ -16,6 +15,10 @@ export default function AdminLayout() {
           <NavLink to="/customers" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
             <Users size={20} />
             <span>客户查询</span>
+          </NavLink>
+          <NavLink to="/invite-codes" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
+            <Ticket size={20} />
+            <span>邀请码管理</span>
           </NavLink>
           {/* Future sections can be added here */}
           <NavLink to="/settings" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
