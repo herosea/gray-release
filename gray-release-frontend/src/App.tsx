@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminLayout from './layouts/AdminLayout';
 import CustomerQuery from './pages/CustomerQuery';
+import InvitationCodeAdmin from './pages/InvitationCodeAdmin';
 
 function App() {
   return (
@@ -9,9 +10,11 @@ function App() {
         <Route path="/" element={<AdminLayout />}>
           <Route index element={<Navigate to="/customers" replace />} />
           <Route path="customers" element={<CustomerQuery />} />
+          <Route path="invitation-codes" element={<InvitationCodeAdmin />} />
           {/* Add more routes here in the future */}
         </Route>
       </Routes>
+
     </BrowserRouter>
   )
 }
