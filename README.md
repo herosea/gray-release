@@ -159,7 +159,7 @@ $ARGUMENTS
 
 使用：
 ```
-use context7
+我要xxx 在任意合适的位置加 use context7
 ```
 ### Skills
 
@@ -179,7 +179,10 @@ use context7
   下一步需要重启 Codex 才能识别这个新技能。重启后可以直接试一句：帮我设计一个 SaaS 落地页。
 ```
 
+Anthropic 的skills仓库 https://github.com/anthropics/skills/tree/main/skills
+
 ### 创建skill
+
 提示词：
 ```
 给我个创建 skills 的例子
