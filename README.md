@@ -1,47 +1,18 @@
-## 引言
+## 项目简介
 
-今天主要讲两件事：`codex` 的使用，以及 `Agentic Engineering`。
-
-`Agentic Engineering` 是 [Karpathy 在 2026 年 2 月 5 日、vibe coding 一周年之际提出的概念](https://x.com/karpathy/status/2019137879310836075)，可以理解为 Vibe Coding 的进化版。通过 LLM 代理进行编程，正在逐渐成为专业开发者的默认工作流，只是监管和审查会更严格。它的目标是在不牺牲软件质量的前提下，充分利用代理的优势。
-
-如果说 Vibe Coding 是“全靠直觉和运气在调戏 AI”，那么 Agentic Engineering 就是“有组织、有纪律的特种兵作战”。
-
-`Agentic Engineering` 可以拆成两个关键词：
-
-- `Agentic`：由 agent 或多 agent 系统来写代码，人类开发者负责监督和验证输出，保持 human-in-the-loop。重点在人的职责变化。
-- `Engineering`：使用 agentic 工作流进行有价值的软件生产，需要一定的专业能力，而这种能力是可以训练和提升的。重点在工程的科学性和艺术性。
+这是用于codex 使用演示的项目
 
 **相关链接**
-- 演示用项目:  https://github.com/herosea/gray-release
-- 演示过程：   https://chatgpt.com/codex/tasks/task_e_69a79a5aad94832e8de158be2f35bbe6
+
+- 示用项目:  https://github.com/herosea/gray-release
+- codex云环境编码过程例子：   https://chatgpt.com/codex/tasks/task_e_69a79a5aad94832e8de158be2f35bbe6
 - codex首页：  https://chatgpt.com/codex
-
-## 大纲
-
-下面是计划分享的大纲
-
-### 一个示例-邀请码后台管理
-
-这个示例提取自财务助手的需求，用邀请码做灰度控制。例子的目的是演示 `codex` 的基本使用，大家可以先忽略具体的业务细节。
-
-由于 `codex` 运行速度不算快，为了避免浪费大家时间，我提前准备了一份可以完整跑通、也能展示关键过程的示例。同时也会现场用 `codex` 跑几轮交互，让第一次接触的同事对它的使用方式有一个直观感受。
-### codex的使用
-这个章节的目的是让大家快速上手 `codex`，包括安装、授权登录和基本使用。
-
-`codex` 在老版本 macOS 上安装会有一些坑，这部分我也会给出建议。
-### Agent 和 LLM（大语言模型）的关系
-
-`codex` 是一个 Agent（智能体）。我会用一张图简单介绍 Agent 和 LLM 的关系，这对理解 `codex` 会有帮助。`codex` 是一个编程智能体，但能力并不限于编程。
-
-### Agentic Engineering一些核心概念
-包括架构设计、构建反馈闭环（让 AI 自己运行、测试、改错），以及管理复杂上下文的方法。
-
-### 其他
-例如手机上操作 `codex`，以及把 `codex` 的 token 授权给其他工具使用。
+- 可按照这个文档[安装codex](codex-安装和使用.md)
+- 可按照这个文档[上手体验codex使用](例子-上手体验.md)
 
 ## 例子演示
 
-我们来到分享的第一部分，从现实项目中抽取的一个功能做的例子项目，代码地址
+例子项目，代码地址
 
 https://github.com/herosea/gray-release 
 示例我放在公开的 GitHub 仓库上，方便大家直接使用。核心资料也都在这个仓库里，例如完整的安装文档和建议。欢迎大家 fork、提 issue。后面会在这个项目上演示codex的使用，大家也可以用这个项目来练手
