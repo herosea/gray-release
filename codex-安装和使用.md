@@ -62,11 +62,25 @@ brew install ripgrep
 ### 2.2  node的另类安装（我的御用方法）
 mise安装和使用教程 https://chatgpt.com/share/69a815a6-b7e0-800e-8818-9aa91c908d6d
 
+```bash
+# 安装mise
+brew install mise # 如果需要编译，可以去官网看怎么安装
+# 安装node
+mise install node@lts
+mise use -g node@lts  # -g 是全局，如果是项目指定版本，-g去掉即可
+# 安装code
+npm i -g @openai/codex
+
+# 安装java（可选）
+mise install java@17
+mise use -g java@17
+```
+
 用 mise 管理 node、java、python等各种语言的版本
 
 另外他能处理老项目用的node 版本很低的问题（codex需要用新版本node，老项目用老版本node），mise.toml  示例如下(一个老的wax项目)
 
-```
+```toml
 [tools]
 node = "10"
 python = "2.7"
@@ -77,7 +91,7 @@ run = "codex --dangerously-bypass-approvals-and-sandbox"
 ```
 
 
-```
+```bash
 zhouxionghai@zhouxionghaideMacBook-Pro ~/S/bkk-admin (issue/ai-agent-default-menu)> mise run codex
 mise 2026.2.11 by @jdx                                                                                                                                   [0/2]
 node@24.11.0    download node-v24.11.0-darwin-arm64.tar.gz                                                                  28.6 MB 14s [==========>       ] ◜
@@ -97,5 +111,4 @@ https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/
 而且需要高版本的macos，不确定intel芯片是否支持
 
 https://chatgpt.com/codex  这个页面截图引导前面3项（插件、云端 和 app）
-
 

@@ -5,7 +5,7 @@
 **相关链接**
 
 - 示用项目:  https://github.com/herosea/gray-release
-- codex云环境编码过程例子：   https://chatgpt.com/codex/tasks/task_e_69a79a5aad94832e8de158be2f35bbe6
+- codex云环境编码过程例子：  https://chatgpt.com/s/cd_69a80e9a1f148191b5f0a04f0db4974a
 - codex首页：  https://chatgpt.com/codex
 - 可按照这个文档 [安装codex](codex-安装和使用.md)
 - 可按照这个文档 [上手体验codex使用](例子-上手体验.md)
@@ -136,8 +136,22 @@ $ARGUMENTS
 - 点击某个按钮，分析对应 network request
 - $slides  codex-安装和使用.md
 - 帮我提取3月9日至今 nvwashi 的git 提交的功能，并组织成周报
+- **文件内容提取** 帮我从 @xx文档中提取 yy需求相关的内容，输出到 zz.md 文件
+- 
 
 ## 其他
+
+### 让 AGENTS.md  GEMINI.md CLAUDS.md 指向同一个文件
+
+这样如果要切换AI code Agent，也不用同步记忆。 目前业界在逐步统一规范，后续也许不需要这么做了
+
+```bash
+# 下面假设 AGENTS.md 文件存在，其他两个删除了
+ln -s AGENTS.md GEMINI.md  # GEMINI.md 软链到 AGENTS.md。 这样codex 使用的记忆文件和 gemini/antigravity一致
+ln -s AGENTS.md CLAUDE.md
+```
+
+### 未归类
 
 - **手机上操作 codex**
 
