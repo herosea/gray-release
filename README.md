@@ -11,6 +11,11 @@
 - `Agentic`：由 agent 或多 agent 系统来写代码，人类开发者负责监督和验证输出，保持 human-in-the-loop。重点在人的职责变化。
 - `Engineering`：使用 agentic 工作流进行有价值的软件生产，需要一定的专业能力，而这种能力是可以训练和提升的。重点在工程的科学性和艺术性。
 
+**相关链接**
+- 演示用项目:  https://github.com/herosea/gray-release
+- 演示过程：   https://chatgpt.com/codex/tasks/task_e_69a79a5aad94832e8de158be2f35bbe6
+- codex首页：  https://chatgpt.com/codex
+
 ## 大纲
 
 下面是计划分享的大纲
@@ -171,6 +176,7 @@ $ARGUMENTS
 ```
 
 `codex` 的回应示例：
+
 ```
 • 已安装完成。
 
@@ -179,7 +185,13 @@ $ARGUMENTS
   下一步需要重启 Codex 才能识别这个新技能。重启后可以直接试一句：帮我设计一个 SaaS 落地页。
 ```
 
-Anthropic 的skills仓库 https://github.com/anthropics/skills/tree/main/skills
+##### skill推荐 
+
+- Anthropic 的skills仓库 https://github.com/anthropics/skills/tree/main/skills
+
+- https://github.com/obra/superpowers  [chatGPT回答 superpowers有什么用](https://chatgpt.com/share/69afda12-c7a0-800e-90df-672e5f966a9d)
+
+​	给codex 发这个安装 `Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md`
 
 ### 创建skill
 
