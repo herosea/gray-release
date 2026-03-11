@@ -22,7 +22,7 @@ git clone git@github.com:apache/superset.git
 我想要一个发送报表到飞书的功能，你有什么方案
 ```
 
-我会先用 <span style="color: green;">using-superpowers 和 brainstorming 两个 skill</span>：前者确认技能使用流程，后者把“发送 Superset 报表到飞书”的需求先做成可落地的方案，而不是直接拍脑袋。
+我会先用 **<span style="color: green;">using-superpowers 和 brainstorming 两个 skill</span>**：前者确认技能使用流程，后者把“发送 Superset 报表到飞书”的需求先做成可落地的方案，而不是直接拍脑袋。
 
 ```
 好
@@ -32,19 +32,19 @@ git clone git@github.com:apache/superset.git
 
 Implement this plan?
 
-› 1. <span style="color: green;">Yes, implement this plan</span>  Switch to Default and start coding.
+› 1. **<span style="color: green;">Yes, implement this plan</span>**  Switch to Default and start coding.
 
     2. No, stay in Plan mode     Continue planning with the model.
 
 写完代码
 
-• 我准备收尾前先按流程补<span style="color: green;">两个 skill：verification-before-completion 做结果核验，requesting-code-review </span>看看这个改动面是否还有明显遗漏。不会再改仓库状态之外的东
+• 我准备收尾前先按流程补**<span style="color: green;">两个 skill：verification-before-completion 做结果核验，requesting-code-review </span>**看看这个改动面是否还有明显遗漏。不会再改仓库状态之外的东
 
 ```
 好，继续
 ```
 
-• 我继续做可执行验证，先补齐当前工作区缺失的测试环境，再跑后端和前端新增用例。为此我会先加载 <<span style="color: green;">using-superpowers 和 systematic-debugging</span>，因为现在的阻塞点是环境
+• 我继续做可执行验证，先补齐当前工作区缺失的测试环境，再跑后端和前端新增用例。为此我会先加载 **<<span style="color: green;">using-superpowers 和 systematic-debugging</span>**，因为现在的阻塞点是环境
   缺依赖，不是代码逻辑本身。
 
 当前实现已经可用，但有一个明确边界：飞书这里走的是群机器人 webhook，所以发送内容是“文本 + Superset 链接/说明”；PNG/CSV/PDF 不做 webhook 直传附件，而是在消息
@@ -68,7 +68,7 @@ Implement this plan?
 确认，继续
 ```
 
-• 设计已经收敛成“PNG 真发图片，其他格式继续文本 fallback”。我现在按<span style="color: green;"> executing-plans 和 test-driven-development </span>先补失败测试，再最小化修改飞书通知实现。
+• 设计已经收敛成“PNG 真发图片，其他格式继续文本 fallback”。我现在按**<span style="color: green;"> executing-plans 和 test-driven-development </span>**先补失败测试，再最小化修改飞书通知实现。
 
 有方案变更，询问是否接受
 

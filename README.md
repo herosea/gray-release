@@ -2,15 +2,6 @@
 
 这是用于codex 使用演示的项目
 
-**相关链接**
-
-- 示用项目:  https://github.com/herosea/gray-release
-- codex云环境编码过程例子：  https://chatgpt.com/s/cd_69a80e9a1f148191b5f0a04f0db4974a
-- codex首页：  https://chatgpt.com/codex
-- 可按照这个文档 [安装codex](codex-安装和使用.md)
-- 可按照这个文档 [上手体验codex使用](例子-上手体验.md)
-- [场景例子](场景例子.md)
-
 ## 例子演示
 
 例子项目的地址 https://github.com/herosea/gray-release 包含了代码和相关文档，欢迎大家 fork、提 issue。
@@ -48,11 +39,9 @@ codex
 * 演示粘贴图片：`ctrl + v`
 * 切换 plan 模式：`ctrl + tab`
 * 取消：`esc`；退出：`ctrl + c`
-* `@` 和 `$` 分别用来引用文件和 skill
+* `@` 和 `$` 分别用来引用文件和 skill；`!`开头执行shell命令
 * [介绍预先跑好的例子](https://chatgpt.com/s/cd_69a80e9a1f148191b5f0a04f0db4974a)。这个例子有点长，我会快速过一遍，主要是让大家体验一下完整开发流程，感受人在其中的职责，比如审核 `codex` 的输出、定义数据库表规则、构建反馈闭环
 * 另外还有一份去掉了 `codex` 回复的提示词版 [例子-上手体验.md](https://github.com/herosea/gray-release/blob/main/%E4%BE%8B%E5%AD%90-%E4%B8%8A%E6%89%8B%E4%BD%93%E9%AA%8C.md)。这个例子是用 `claude code` 的时候记录的，使用 `minimax2.1` 模型，初版代码有编译错误，我要求它自己编译、写测试用例并自行启动，通过构建闭环让它自己处理编译异常。
-
-前面通过一个例子和基础操作让大家建立直觉，接下来我会更系统地讲一下 `codex` 的安装和使用，目标是大家回去以后就能自己上手。
 
 ### git worktree
 
@@ -183,5 +172,13 @@ happy codex
 - 提示词：`codex 有没有 sdk，有的话怎么用`
   - 目前先提供 TypeScript 版，包名是 `@openai/codex-sdk`
 
+## **相关链接**
 
+- 示用项目:  https://github.com/herosea/gray-release
+- codex云环境编码过程例子：  https://chatgpt.com/s/cd_69a80e9a1f148191b5f0a04f0db4974a
+- codex首页：  https://chatgpt.com/codex
+- 可按照这个文档 [安装codex](codex-安装和使用.md)
+- 可按照这个文档 [上手体验codex使用](例子-上手体验.md)
+- [场景例子](场景例子.md)
+- [superset添加报表图片发飞书群功能例子，使用了superpower 这个skill](https://github.com/herosea/gray-release/blob/main/例子-superset.md)
 
