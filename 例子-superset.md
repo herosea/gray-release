@@ -6,9 +6,180 @@
 git clone git@github.com:apache/superset.git
 ```
 
-## codex 编码过程记录
+## 安装superpower（这个skill如果安装了不需要重复安装）
 
-**下面框起来的是发给codex的指令，其他的是简化的codex的输出**
+提前安装了superpower，如果未装，给codex指令安装，指令如下
+
+```
+`Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md`
+```
+
+## 编码发送的指令汇总（简要）
+
+**<span style="color: red;">下面框起来的是发给codex的指令，其他的是简化后的codex的响应</span>**
+
+```
+我想要一个发送报表到飞书的功能，你有什么方案
+```
+
+我会先用 <span style="color: green;">using-superpowers 和 brainstorming 两个 skill</span>：前者确认技能使用流程，后者把“发送 Superset 报表到飞书”的需求先做成可落地的方案，而不是直接拍脑袋。
+
+```
+好
+```
+
+• 我现在切到 writing-plans，把刚才确认的方向整理成可直接交给实现者的决策完备方案，不做代码变更。
+
+Implement this plan?
+
+› 1. <span style="color: green;">Yes, implement this plan</span>  Switch to Default and start coding.
+
+    2. No, stay in Plan mode     Continue planning with the model.
+
+写完代码
+
+• 我准备收尾前先按流程补<span style="color: green;">两个 skill：verification-before-completion 做结果核验，requesting-code-review </span>看看这个改动面是否还有明显遗漏。不会再改仓库状态之外的东
+
+```
+好，继续
+```
+
+• 我继续做可执行验证，先补齐当前工作区缺失的测试环境，再跑后端和前端新增用例。为此我会先加载 <<span style="color: green;">using-superpowers 和 systematic-debugging</span>，因为现在的阻塞点是环境
+  缺依赖，不是代码逻辑本身。
+
+当前实现已经可用，但有一个明确边界：飞书这里走的是群机器人 webhook，所以发送内容是“文本 + Superset 链接/说明”；PNG/CSV/PDF 不做 webhook 直传附件，而是在消息
+  里明确提示。这部分如果你要升级成“真正上传图片/文件到飞书”，下一步就要改成接入飞书上传接口，不再只靠 webhook。
+
+-----
+
+```
+升级成“真正上传图片/文件到飞书
+```
+
+会，明显比“图片+文件都支持”简单。
+
+```
+文件不发，只发图片呢，会不会简单点
+```
+
+会，明显比“图片+文件都支持”简单。
+
+```
+确认，继续
+```
+
+• 设计已经收敛成“PNG 真发图片，其他格式继续文本 fallback”。我现在按<span style="color: green;"> executing-plans 和 test-driven-development </span>先补失败测试，再最小化修改飞书通知实现。
+
+有方案变更，询问是否接受
+
+```
+接受
+```
+
+• 代码修改完成
+
+```
+我想要本地启动应用，需要怎么做
+Webhook URL、可选 Secret、以及 App ID / App secret 配置到哪里
+```
+
+• 在每个发报表的任务里面配置
+
+```
+帮我启动应用
+```
+
+  -  如果你现在要验证飞书报表功能，直接打开 http://127.0.0.1:8088 登录即可。
+
+```
+账号密码是多少
+```
+
+• 如果你还没改过，本地默认是：
+
+  - 用户名：admin
+  - 密码：general
+
+如果登不上，说明你本地数据库里已有别的管理员密码，我可以继续帮你重置。
+
+```
+重置一下
+```
+
+• 管理员账号已经补建好了。
+
+  现在可以用：
+
+  - 用户名：admin
+  - 密码：general
+
+  如果你要，我可以继续帮你走到创建 Feishu report 的页面。
+
+```
+好啊，创建Feishu report 的页面
+```
+
+• 登录后这样进，后面说了一切界面怎么操作的说明，里面提到了 “Settings 或顶部导航里的 Alerts & Reports”
+
+```
+帮我导入例子
+```
+
+• 例子已经导入完成了
+
+```
+Settings 或顶部导航里的 Alerts & Reports 这个菜单没有
+```
+
+```
+启用 chrome-devtools mcp， 打开浏览器，帮我找下发飞书报表的菜单
+```
+
+如果这个菜单还是没有，基本就是权限或 feature flag 问题。我可以下一步直接帮你在本地把这两个条件查出来。
+
+```
+看是不是 feature flag 问题
+```
+
+• 是，基本就是 feature flag 问题。
+
+  在 ~/.superset/superset_config.py 加：
+
+  FEATURE_FLAGS = {
+      "ALERT_REPORTS": True,
+  }
+
+  如果你要，我下一步可以直接帮你：
+
+    1. 创建 ~/.superset/superset_config.py
+    2. 写入 ALERT_REPORTS=True
+    3. 重启本地 Superset 服务
+
+```
+好，帮我处理下
+```
+
+• 处理好了，...
+
+  你现在刷新页面后，再去任意 Dashboard 的右上角菜单，应该就能看到：
+
+  - Manage email report
+  - 然后点 Set up an email report
+  - 在弹窗里切成 Feishu
+
+  如果刷新后还是没有，我下一步就直接帮你查当前 admin 账号的 Manage 菜单权限。
+
+
+
+
+
+-----
+
+
+
+
+
+## codex 编码过程（详细记录）
 
 ```
 我想要一个发送报表到飞书的功能，你有什么方案
@@ -75,46 +246,46 @@ git clone git@github.com:apache/superset.git
 
 • 我现在切到 writing-plans，把刚才确认的方向整理成可直接交给实现者的决策完备方案，不做代码变更。
 
-# Superset 飞书报表通知实现方案
+Superset 飞书报表通知实现方案
 
-  ## 摘要
+摘要
 
   在现有 Alerts & Reports 框架内新增 Feishu 通知渠道，复用 Superset 已有的报表调度、截图/CSV/PDF 生成、执行日志和失败重试链路。第一版目标是支持“每个报表单独
   配置一个飞书群机器人 webhook”，发送简单文本消息，并按报表格式附带截图或文件，不做飞书卡片、不做用户/群 ID 直发。
 
-  ## 关键改动
+关键改动
 
-  ### 后端通知链路
-
-  - ...
-
-  ### Schema / API
+后端通知链路
 
   - ...
 
-  ### 前端 UI
+Schema / API
 
   - ...
 
-  ## 实现分解
-
-  ### 任务 1：梳理执行入口并补测试基线
+前端 UI
 
   - ...
 
-  ### 任务 5：联调与文档
+实现分解
+
+任务 1：梳理执行入口并补测试基线
 
   - ...
 
-  ## 测试计划
+任务 5：联调与文档
 
   - ...
 
-  ## 公开接口与类型变化
+测试计划
 
   - ...
 
-  ## 假设与默认值
+公开接口与类型变化
+
+  - ...
+
+假设与默认值
 
   - ...
 
