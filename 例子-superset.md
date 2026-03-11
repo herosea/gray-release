@@ -1,10 +1,14 @@
 ##  superset发送报表到飞书
 
-克隆代码到本地
+## 克隆代码到本地
 
 ```bash
 git clone git@github.com:apache/superset.git
 ```
+
+## codex 编码过程记录
+
+**下面框起来的是发给codex的指令，其他的是简化的codex的输出**
 
 ```
 我想要一个发送报表到飞书的功能，你有什么方案
