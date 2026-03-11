@@ -53,6 +53,15 @@ codex
 * 另外还有一份去掉了 `codex` 回复的提示词版 [例子-上手体验.md](https://github.com/herosea/gray-release/blob/main/%E4%BE%8B%E5%AD%90-%E4%B8%8A%E6%89%8B%E4%BD%93%E9%AA%8C.md)。这个例子是用 `claude code` 的时候记录的，使用 `minimax2.1` 模型，初版代码有编译错误，我要求它自己编译、写测试用例并自行启动，通过构建闭环让它自己处理编译异常。
 
 前面通过一个例子和基础操作让大家建立直觉，接下来我会更系统地讲一下 `codex` 的安装和使用，目标是大家回去以后就能自己上手。
+
+### git worktree
+
+```
+git worktree add ../project-auth -b feature/auth
+```
+
+https://chatgpt.com/share/69b0d87d-13c0-800e-9fa0-a8530bcd0c3c
+
 ### 自定义斜杆命令
 [Custom Slash Commands（自定义斜杠命令）](https://chatgpt.com/c/69aa9c33-3ab8-832b-905a-1fb3174febb6)
 
