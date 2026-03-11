@@ -144,17 +144,11 @@ $ARGUMENTS
 帮我做一个 skill
 ```
 
-### 能干啥
-写代码、写文档、做测试、代码分析（架构分析、review 代码、周报提取），也能操作 shell 和浏览器（具备环境感知能力）。
+### 使用superpowers 在 superset上开发的例子
 
-通过 skill，它还可以写 PPT、Excel、写新媒体文章、配图，甚至发布内容。
+[例子-superset.md] (例子-superset.md)
 
-例如：
-- 点击某个按钮，分析对应 network request
-- $slides  codex-安装和使用.md
-- 帮我提取3月9日至今 nvwashi 的git 提交的功能，并组织成周报
-- **文件内容提取** 帮我从 @xx文档中提取 yy需求相关的内容，输出到 zz.md 文件
-- 
+
 
 ## 其他
 
