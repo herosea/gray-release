@@ -121,6 +121,10 @@ $ARGUMENTS
 
 ​	给codex 发这个提示词进行安装 `Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md`
 
+##### skill市场
+
+
+
 ### 创建skill
 
 提示词：
