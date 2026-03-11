@@ -15,15 +15,36 @@
 
 例子项目的地址 https://github.com/herosea/gray-release 包含了代码和相关文档，欢迎大家 fork、提 issue。
 
+###  clone项目
+
 * clone 并切换到项目目录，启动 `codex`
 ```
 git clone git@github.com:herosea/gray-release.git 
 cd gray-release
 codex 
 ```
+### auth授权使用
+
+订阅了 ChatGPT 会员后，一般就可以直接使用 `codex`，不需要单独购买。
+[codex功能详解](https://chatgpt.com/share/69aa86a9-8190-800e-ace2-2bcc44193fbe)
+
+我会先用 `/logout` 演示一次重新授权。
+
+执行 `/init` 命令初始化项目，一个项目通常只需要做一次。
+
+如果授权总是不成功（或者授权后用不了），可以试着删除文件 ~/.codex/auth.json 和 ~/.codex/config.toml，再授权一次
+
+### 配置YOLO模式
+
+~/.bashrc  或者对应shell的配置里面加如下一行启用YOLO 模式（You only live once）：
+`alias codex='codex --dangerously-bypass-approvals-and-sandbox'`
+
+### 常用命令演示
+
 * 在codex的交互界面输入 `评审邀请码需求文档 @docs/邀请码需求文档.md`，codex会对这个文档进行评审给出意见
   * 在评审需求的空档，可以了解下这个 TUI 界面，有些指令在任务运行时也可以执行的
 * 介绍 `/model`、`/resume`、`/rename` 和 `/compact` 命令
+* 其他常用命令：`/status`、`/review`、`/copy`
 * 演示粘贴图片：`ctrl + v`
 * 切换 plan 模式：`ctrl + tab`
 * 取消：`esc`；退出：`ctrl + c`
@@ -32,19 +53,6 @@ codex
 * 另外还有一份去掉了 `codex` 回复的提示词版 [例子-上手体验.md](https://github.com/herosea/gray-release/blob/main/%E4%BE%8B%E5%AD%90-%E4%B8%8A%E6%89%8B%E4%BD%93%E9%AA%8C.md)。这个例子是用 `claude code` 的时候记录的，使用 `minimax2.1` 模型，初版代码有编译错误，我要求它自己编译、写测试用例并自行启动，通过构建闭环让它自己处理编译异常。
 
 前面通过一个例子和基础操作让大家建立直觉，接下来我会更系统地讲一下 `codex` 的安装和使用，目标是大家回去以后就能自己上手。
-### auth授权使用
-订阅了 ChatGPT 会员后，一般就可以直接使用 `codex`，不需要单独购买。
-[codex功能详解](https://chatgpt.com/share/69aa86a9-8190-800e-ace2-2bcc44193fbe)
-
-我会先用 `/logout` 演示一次重新授权。
-
-执行 `/init` 命令初始化项目，一个项目通常只需要做一次。
-
-其他常用命令：`/status`、`/review`、`/copy`
-
-YOLO 模式：
-`alias codex='codex --dangerously-bypass-approvals-and-sandbox'`
-
 ### 自定义斜杆命令
 [Custom Slash Commands（自定义斜杠命令）](https://chatgpt.com/c/69aa9c33-3ab8-832b-905a-1fb3174febb6)
 
