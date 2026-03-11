@@ -23,7 +23,7 @@ codex
 
 执行 `/init` 命令初始化项目，一个项目通常只需要做一次。
 
-如果授权总是不成功（或者授权后用不了），可以试着删除文件 ~/.codex/auth.json 和 ~/.codex/config.toml，再授权一次
+如果授权总是不成功（或者授权后用不了），可以试着**删除文件 ~/.codex/auth.json 和 ~/.codex/config.toml，再授权一次**
 
 ### 配置YOLO模式
 
