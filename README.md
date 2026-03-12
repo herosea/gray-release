@@ -30,6 +30,8 @@ codex
 ~/.bashrc  或者对应shell的配置里面加如下一行启用YOLO 模式（You only live once）：
 `alias codex='codex --dangerously-bypass-approvals-and-sandbox'`
 
+这个模式自动通过需要审批的请求，在沙箱外运行
+
 ### 常用命令演示
 
 * 在codex的交互界面输入 `评审邀请码需求文档 @docs/邀请码需求文档.md`，codex会对这个文档进行评审给出意见
